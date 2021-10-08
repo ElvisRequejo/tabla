@@ -1,0 +1,33 @@
+<div class="container w-75" style="margin-top: 20px;">
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label"><b>Título</b></label>
+    <input name="titulo" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese Titulo" [(ngModel)]="titulo" />
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label"><b>Descripción</b></label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Ingresar descripcion" [(ngModel)]="descripcion"></textarea>
+  </div>
+  <button type="button" class="btn btn-danger" (click)="agregar()">Agregar</button>
+</div>
+
+
+<div class="container w-75" style="margin-top: 20px;">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Titulo </th>
+        <th scope="col">Descirpcion</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let l of libro; index as contador">
+        <th scope="row">{{contador+1}}</th>
+        <td>{{l.titulo}}</td>
+        <td>{{l.descripcion}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
